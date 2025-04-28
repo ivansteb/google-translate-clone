@@ -3,8 +3,7 @@ import { SUPPORTED_LANGUAGES } from "../constants";
 import { FromLanguage, Language } from "../types.d";
 
 const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-
-const client = new OpenAI({ apiKey });
+const client = new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
 
 
 export async function translate ({
@@ -18,7 +17,7 @@ export async function translate ({
 }) {
     const completions = await client.chat.completions.create(
         {
-            model: 'gpt-4.0',
+            model: 'gpt-4o',
             messages: [
                 {
                     role: 'developer',
@@ -57,7 +56,7 @@ export async function translate ({
 
     const response = await client.chat.completions.create(
         {
-            model: 'gpt-4.0',
+            model: 'gpt-4o',
             messages: [
                 {
                     role: completions.choices[0].message.role,

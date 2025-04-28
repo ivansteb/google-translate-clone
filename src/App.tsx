@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Button, Form, Stack } from "react-bootstrap";
 import "./App.css";
@@ -22,6 +22,10 @@ function App() {
     setFromText,
     setResult,
   } = useStore();
+
+  useEffect(() => {
+    console.log(fromText, 'useEffect');
+  }, [fromText])
 
   return (
     <Container fluid>

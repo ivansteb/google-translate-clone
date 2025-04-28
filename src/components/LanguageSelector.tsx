@@ -1,3 +1,4 @@
+import React from 'react';
 import { Form } from 'react-bootstrap';
 import { SUPPORTED_LANGUAGES } from '../constants';
 import { FromLanguage, type Language } from '../types';

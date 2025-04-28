@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import { AUTO_LANGUAGE, SUPPORTED_LANGUAGES } from '../constants';
-import { SectionType, type FromLanguage, type Language } from '../types';
+import { SectionType, type FromLanguage, type Language } from '../types.d';
 
 
 

@@ -11,6 +11,7 @@ import { TextArea } from "./components/TextArea";
 
 function App() {
   const {
+    loading,
     fromLanguage,
     toLanguage,
     fromText,
@@ -63,6 +64,7 @@ function App() {
               type={SectionType.To}
               value={result}
               onChange={setResult}
+              loading={loading}
             />
           </Stack>
         </Col>

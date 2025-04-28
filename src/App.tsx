@@ -8,6 +8,7 @@ import { ArrowsIcon } from "./components/Icons";
 import { LanguageSelector } from "./components/LanguageSelector";
 import { SectionType } from "./types.d";
 import { TextArea } from "./components/TextArea";
+import { translate } from "./services/translate";
 
 function App() {
   const {
@@ -24,7 +25,14 @@ function App() {
   } = useStore();
 
   useEffect(() => {
-    console.log(fromText, 'useEffect');
+    if (fromText === '') return;
+
+    translate({ fromLanguage, toLanguage, text: fromText })
+      .then(result => {
+        if (result == null) return;
+        setResult(result.translatedText);
+      })
+      .catch(() => { setResult('Error: No se pudo traducir el texto.') })
   }, [fromText])
 
   return (

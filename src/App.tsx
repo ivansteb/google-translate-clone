@@ -33,7 +33,7 @@ function App() {
         setResult(result.translatedText);
       })
       .catch(() => { setResult('Error: No se pudo traducir el texto.') })
-  }, [fromText])
+  }, [fromText, fromLanguage, toLanguage])
 
   return (
     <Container fluid>
